@@ -169,7 +169,7 @@ export default function MobileHero() {
   }, [p]);
 
   const heroY = useTransform(p, [0, 0.55], [0, -560], { ease, clamp: true });
-  const phoneY = useTransform(p, [0, 0.5], [300, 0], { ease, clamp: true });
+  const phoneY = useTransform(p, [0, 0.5], [480, 0], { ease, clamp: true });
   const phoneScale = useTransform(p, [0, 0.5], [0.9, 1], { ease, clamp: true });
   const clusterOpacity = useTransform(p, [0.55, 0.75], [0, 1], { clamp: true });
 
