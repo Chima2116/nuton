@@ -182,7 +182,7 @@ export default function MobileHero() {
           <motion.div style={{ y: heroY, x: "-50%" }} className="absolute left-1/2 top-[105px] flex w-[361px] flex-col items-center gap-[32px]">
             <div className="relative flex w-full flex-col items-center gap-[16px]">
               <span className="inline-flex items-center gap-[2px] rounded-full bg-[#c0d5ff] py-[2px] pl-[8px] pr-[4px]">
-                <span className="text-[12px] font-medium leading-[20px] text-[#182f8b]" style={{ fontFamily: "var(--font-inter)" }}>We&rsquo;ve got a new updates</span>
+                <span className="text-[12px] font-medium leading-[20px] text-[#182f8b]" style={{ fontFamily: "var(--font-inter)" }}>We&rsquo;ve got new updates</span>
                 <img src="/app/arrow-right-long.svg" alt="" className="h-4 w-4" />
               </span>
               <h1 className="text-center font-header text-[32px] font-normal leading-[40px] tracking-[-0.16px] text-strong" style={{ fontVariationSettings: '"SOFT" 0, "WONK" 1' }}>

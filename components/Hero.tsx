@@ -23,7 +23,7 @@ export default function Hero() {
         <div className="flex w-full flex-col items-center gap-4">
           {/* Badge */}
           <span className="inline-flex items-center gap-0.5 rounded-full bg-primary-light py-0.5 pl-2 pr-1 text-[12px] font-medium leading-5 text-primary-dark">
-            We&apos;ve got a new updates
+            We&apos;ve got new updates
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M5 12h14M13 6l6 6-6 6" />
             </svg>

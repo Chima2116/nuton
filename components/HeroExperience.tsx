@@ -43,7 +43,7 @@ const SESSIONS: Session[] = [
   { badge: "AI Tutor", heading: "Ask questions until it clicks.", subtitle: "Stuck on a concept? Ask questions, request examples, or explore deeper explanations in real time", src: "/videos/v2.mp4", dur: 5.984 },
   { badge: "Flash Cards", heading: "Remember what matters.", subtitle: "Instantly generate smart flashcards from your lesson and reinforce the concepts that stick", src: "/videos/v3.mp4", dur: 8.875 },
   { badge: "Podcast", heading: "Listen. Don\u2019t just read.", subtitle: "Convert any lesson into an AI-generated podcast so you can learn while walking, driving, or resting your eyes.", src: "/videos/v4.mp4", dur: 6.934 },
-  { badge: "Quizes", heading: "Prove you understand it.", subtitle: "Test yourself with scenario-based questions, adjustable difficulty, and explanations after every answer.", src: "/videos/v5.mp4", dur: 10.1 },
+  { badge: "Quizzes", heading: "Prove you understand it.", subtitle: "Test yourself with scenario-based questions, adjustable difficulty, and explanations after every answer.", src: "/videos/v5.mp4", dur: 10.1 },
   { badge: "Notes", heading: "Make it yours.", subtitle: "Write, annotate, and connect ideas directly to your lessons \u2014 so understanding becomes personal, not passive.", src: "/videos/v6.mp4", dur: 12.417 },
 ];
 const SESS_START = 0.5;
@@ -351,7 +351,7 @@ export default function HeroExperience() {
             <motion.div style={{ left: 720, top: 245, x: "-50%", y: heroY, opacity: heroOpacity }} className="absolute z-30 flex w-[724px] flex-col items-center gap-8">
               <div className="relative flex w-full flex-col items-center gap-4">
                 <span className="inline-flex items-center gap-0.5 rounded-full bg-primary-light py-0.5 pl-2 pr-1 text-[12px] font-medium leading-5 text-primary-dark">
-                  We&apos;ve got a new updates
+                  We&apos;ve got new updates
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
                 </span>
                 <h1 className="text-center font-header text-[56px] font-normal leading-[64px] tracking-[-0.56px] text-strong">Learn the way <span className="font-header font-semibold italic">Your Brain</span> understands best.</h1>
