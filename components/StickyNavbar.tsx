@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion, cubicBezier } from "framer-motion";
 import Logo from "./Logo";
 import { scrollToSection } from "@/lib/scroll";
@@ -26,6 +26,9 @@ export default function StickyNavbar() {
   const [scrolled, setScrolled] = useState(false);
   const [theme, setTheme] = useState<Theme>("light");
   const [open, setOpen] = useState(false);
+  // Mobile only: hide the bar on scroll-down, reveal it on scroll-up.
+  const [hidden, setHidden] = useState(false);
+  const lastY = useRef(0);
 
   useEffect(() => {
     const probe = 54; // navbar vertical mid-point
@@ -34,6 +37,14 @@ export default function StickyNavbar() {
       const y = window.scrollY;
       setScrolled(y > 8);
       setOpen((o) => (o ? false : o)); // close the menu on scroll
+
+      // Direction-aware visibility: always shown near the top; otherwise hide
+      // when moving down and reveal when moving up. A small delta avoids jitter.
+      const delta = y - lastY.current;
+      if (y < 80) setHidden(false);
+      else if (delta > 4) setHidden(true);
+      else if (delta < -4) setHidden(false);
+      lastY.current = y;
 
       let next: Theme = "light";
       document.querySelectorAll<HTMLElement>("[data-nav-theme]").forEach((el) => {
@@ -51,6 +62,8 @@ export default function StickyNavbar() {
   }, []);
 
   const isDark = theme === "dark";
+  // Keep the bar on screen while the mobile menu is open.
+  const concealed = hidden && !open;
 
   const shell = isDark
     ? scrolled || open
@@ -69,7 +82,11 @@ export default function StickyNavbar() {
   };
 
   return (
-    <header className="fixed left-1/2 top-5 z-50 w-[694px] max-w-[calc(100%-2rem)] -translate-x-1/2">
+    <header
+      className={`fixed left-1/2 top-5 z-50 w-[694px] max-w-[calc(100%-2rem)] -translate-x-1/2 transition-transform duration-300 ease-out will-change-transform md:translate-y-0 ${
+        concealed ? "-translate-y-[160%]" : "translate-y-0"
+      }`}
+    >
       <nav className={`relative flex h-[64px] items-center justify-between rounded-full border px-3 transition-colors duration-300 sm:h-[68px] sm:px-4 ${shell}`}>
         <Logo dark={isDark} />
 
